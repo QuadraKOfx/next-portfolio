@@ -35,7 +35,7 @@ const Navbar = () => {
     }, [width]);
 
     return (
-        <header className='flex w-full px-20 py-8 font-medium items-center justify-between'>
+        <header className='flex w-full px-8 py-8 font-medium items-center justify-between fixed'>
             {/* LEFT NAVBAR FOR SECTION LINKS */}
             <div className="w-full">
                 <nav>
