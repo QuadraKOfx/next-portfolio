@@ -59,7 +59,7 @@ export default function Home() {
             </main>
 
             {/* FOOTER */}
-            <div className="w-full footer">
+            <div className="w-full footer bottom-0 absolute">
                 <Footer />
             </div>
         </Fragment>

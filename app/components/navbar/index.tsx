@@ -78,7 +78,7 @@ const Navbar = () => {
             {/* MOBILE NAVBAR FOR SECTION LINKS */}
             {responsiveNavVisible &&
                 <div className="min-w-[70vw] bg-dark/90 fixed top-1/2 py-32 rounded-lg flex items-center
-                    justify-between z-30 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    justify-between z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md">
                     <nav className="w-full flex flex-col">
                         {sectionLinks.map(({name, link}, index) => (
                             <motion.button
