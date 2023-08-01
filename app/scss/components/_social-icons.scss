@@ -1,0 +1,45 @@
+.social-icons {
+  position: fixed;
+  bottom: 0;
+  left: 4rem;
+  &-list {
+    flex-direction: column;
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    &-item {
+      transition: 0.3s ease-in-out;
+      font-size: var(--tlarge2);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      &-link {
+        outline: 2px dashed transparent;
+        color: var(--lightest-slate);
+        transition: 0.3s ease-in-out;
+        padding: 10px;
+        &:hover {
+          color: var(--theme-color);
+        }
+      }
+      &:hover {
+        transform: translateY(-4px);
+      }
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+    }
+    &::after {
+      content: "";
+      width: 2px;
+      height: 90px;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    left: 2rem;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
