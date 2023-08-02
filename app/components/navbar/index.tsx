@@ -8,6 +8,8 @@ import Link from "next/link";
 
 // HOOKS
 import useWindowSize from "portfolio/app/hooks/useWindowSize";
+import useThemeToggle from "portfolio/app/hooks/useThemeToggle";
+import {FiMoon, FiSun} from "react-icons/fi";
 
 interface CustomLinkInterface {
     href: string;
@@ -37,6 +39,7 @@ const Navbar = () => {
     ];
 
     const {width} = useWindowSize();
+    const {mode, setMode} = useThemeToggle();
 
     useEffect(() => {
         if (width < 1024) {
@@ -62,6 +65,7 @@ const Navbar = () => {
                         }}>
                         {responsiveNavVisible ? (
                             <CgClose
+                                className={`${mode === 'dark' ? 'dark:text-white' : 'dark:text-dark'}`}
                                 style={{cursor: 'pointer', fontSize: '28px', zIndex: 1000}}
                                 onClick={(e) => {
                                     e.stopPropagation();
@@ -70,6 +74,7 @@ const Navbar = () => {
                             />
                         ) : (
                             <GiHamburgerMenu
+                                className={`${mode === 'dark' ? 'dark:text-white' : 'dark:text-dark'}`}
                                 style={{cursor: 'pointer', fontSize: '28px', zIndex: 1000}}
                                 onClick={(e) => {
                                     e.stopPropagation();
@@ -90,13 +95,13 @@ const Navbar = () => {
 
             {/* MOBILE NAVBAR FOR SECTION LINKS */}
             {responsiveNavVisible &&
-                <div className="min-w-[70vw] bg-dark/90 fixed top-1/2 py-32 rounded-lg flex items-center
+                <div className="dark:bg-light min-w-[70vw] bg-dark/90 fixed top-1/2 py-32 rounded-lg flex items-center
                     justify-between z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md">
                     <nav className="w-full flex flex-col">
                         {sectionLinks.map(({name, link}, index) => (
                             <motion.button
                                 key={name}
-                                className="nav-items-list-item text-light"
+                                className="nav-items-list-item text-light dark:text-dark"
                                 initial={{opacity: 0, y: -25}}
                                 animate={{opacity: 1, y: 0}}
                                 transition={{
@@ -109,6 +114,20 @@ const Navbar = () => {
                                 </Link>
                             </motion.button>
                         ))}
+
+                        <motion.button
+                            className="nav-items-list-item text-light flex justify-center dark:text-dark"
+                            initial={{opacity: 0, y: -25}}
+                            animate={{opacity: 1, y: 0}}
+                            onClick={() => setMode(mode === "light" ? "dark" : "light")}
+                            transition={{
+                                duration: 0.3,
+                                ease: "easeInOut",
+                                delay: 0.3,
+                            }}>
+                            {mode === "dark" ? <FiSun className={"fill-dark"}/>
+                                : <FiMoon className={"fill-dark"}/>}
+                        </motion.button>
                     </nav>
                 </div>
             }
