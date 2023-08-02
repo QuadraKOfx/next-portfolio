@@ -59,17 +59,17 @@ export default function Home() {
                             <div className="flex items-center selft-start lg:self-center min-w-full
                                     mt-7 sm:justify-around">
                                 <Link href={"/dummy.pdf"} target={"_blank"}
-                                      className="flex items-center bg-dark text-light
+                                      className="flex items-center bg-red-600 dark:text-light
                                         border-2 border-solid rounded-lg text-lg font-bold p-2.5
-                                        px-6 border-transparent dark:bg-red-500 dark:text-dark"
+                                        px-6 border-transparent dark:bg-red-500 text-light"
                                       download={true}>
                                     Resume
                                 </Link>
 
                                 <Link href={"/dummy.pdf"} target={"_blank"}
-                                      className="flex items-center bg-blue-400 text-light border-2 border-solid
+                                      className="flex items-center dark:bg-light bg-dark text-light border-2 border-solid
                                       rounded-lg text-lg font-semibold p-2.5 px-6 border-transparent min_lg:ml-2
-                                      dark:bg-light dark:text-dark">
+                                      dark:text-dark">
                                     Contact
                                 </Link>
 
