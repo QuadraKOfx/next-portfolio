@@ -3,6 +3,8 @@ import React, {Fragment} from "react";
 import SocialIcons from "portfolio/app/components/social-icons";
 import Footer from "portfolio/app/components/footer";
 import Link from "next/link";
+import Image from "next/image";
+import ProfilePicture from "../public/happines.jpg";
 
 export default function Home() {
     return (
@@ -15,8 +17,9 @@ export default function Home() {
                 {/* CONTAINER */}
                 <div className="flex items-center justify-between w-full lg:flex-col sm:px-10">
                     {/* TODO ANIMATED TEXT IMAGE COMPONENT */}
-                    <div className="w-1/2">
-
+                    <div className={`w-1/2 lg:hidden md:inline-block md:w-full avatar-image`}>
+                        <Image src={ProfilePicture} alt={'Quad-Devs'} className="w-full h-auto"
+                            priority/>
                     </div>
                     {/* ======= IMAGE TEXT COMPONENT /END ====== */}
 
