@@ -127,17 +127,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-
-// <motion.div
-//     className="brand"
-//     initial={{opacity: 0}}
-//     animate={{opacity: 1}}
-//     transition={{
-//         duration: 0.3,
-//         ease: "easeInOut",
-//     }}>
-//     <Link href="/">
-//         Logo
-//     </Link>
-// </motion.div>
