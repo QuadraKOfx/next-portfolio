@@ -1,6 +1,5 @@
 import Navbar from "portfolio/app/components/navbar";
 import React, {Fragment} from "react";
-import SocialIcons from "portfolio/app/components/social-icons";
 import Footer from "portfolio/app/components/footer";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,15 +10,17 @@ export default function Home() {
         <Fragment>
 
             <Navbar/>
-            <SocialIcons/>
 
-            <main className={"flex items-center text-dark w-full min-h-[85vh]"}>
+            {/* TODO PLACE SOCIAL ICONS */}
+            {/*<SocialIcons/>*/}
+
+            {/*max-h-[85vh]*/}
+            <main className={`flex items-center text-dark w-full min-h-screen flex-col`}>
                 {/* CONTAINER */}
-                <div className="z-0 inline-block h-full w-full p-28 dark:bg-dark xl:p-24 lg:p-16
-                    md:p-12 sm:p-8 !pt-0 md:!pt-16 sm:!pt-16">
+                <div className="z-0 flex w-full dark:bg-dark pt-7 min_lg:min-h-[100vh]">
                     <div className="flex items-center justify-between w-full lg:flex-col sm:px-8 md:flex-col">
                         {/* TODO ANIMATED TEXT IMAGE COMPONENT */}
-                        <div className={`w-1/2 md:inline-block md:w-full`}>
+                        <div className={`w-1/2 md:w-full flex justify-center`}>
                             <Image src={ProfilePicture} alt={'Quad-Devs'} className={`w-full h-auto avatar-image`}
                                    priority/>
                         </div>
@@ -44,7 +45,8 @@ export default function Home() {
                                 Bringing Ideas to Life.
                             </p>
 
-                            <div className="flex items-center selft-start mt-2 lg:self-center min-w-full">
+                            <div className="flex items-center selft-start mt-2 lg:self-center min-w-full
+                                sm:justify-around">
                                 <Link href={"/dummy.pdf"} target={"_blank"}
                                       className="flex items-center bg-dark text-light hover:text-dark
                                     border-2 border-solid rounded-lg text-lg font-semibold hover:bg-light
@@ -54,17 +56,24 @@ export default function Home() {
                                     Resume
                                 </Link>
 
+                                <Link href={"/dummy.pdf"} target={"_blank"}
+                                      className="flex items-center bg-blue-400 text-light hover:text-dark
+                                    border-2 border-solid rounded-lg text-lg font-semibold hover:bg-light
+                                    p-2.5 px-6 border-transparent hover:border-dark focus:bg-dark
+                                    focus:text-light min_lg:ml-2">
+                                    Contact
+                                </Link>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
+                {/* FOOTER */}
+                <div className="w-full footer bottom-0 absolute">
+                    <Footer/>
+                </div>
             </main>
-
-            {/* FOOTER */}
-            <div className="w-full footer bottom-0 absolute">
-                <Footer/>
-            </div>
         </Fragment>
     )
 }
