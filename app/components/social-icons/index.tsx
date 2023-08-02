@@ -43,7 +43,7 @@ const SocialIcons = () => {
                     <li key={name} title={name} className="social-icons-list-item">
                         <Link
                             href={link}
-                            className="social-icons-list-item-link"
+                            className="social-icons-list-item-link dark:text-dark"
                             target="_blank">
                             {icon}
                         </Link>

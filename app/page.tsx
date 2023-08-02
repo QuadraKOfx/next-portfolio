@@ -29,18 +29,6 @@ export default function Home() {
 
                         <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center mt-5">
 
-                            {/*<motion.h1*/}
-                            {/*    className="nav-items-list-item text-light dark:text-dark h-9 text-center"*/}
-                            {/*    initial={{opacity: 0, y: -25}}*/}
-                            {/*    animate={{opacity: 1, y: 0}}*/}
-                            {/*    transition={{*/}
-                            {/*        duration: 0.3,*/}
-                            {/*        ease: "easeInOut",*/}
-                            {/*        delay: 1.2,*/}
-                            {/*    }}>*/}
-                            {/*    Marios Constantinou*/}
-                            {/*</motion.h1>*/}
-
                             <div className="w-full mx-auto py-2 flex items-center justify-center
                             text-center overflow-hidden sm:py-0">
                                 <h1 className={`dark:text-white light:text-dark w-full text-dark capitalize font-bold
@@ -68,17 +56,12 @@ export default function Home() {
                             </div>
                             {/* ======= ANIMATED TEXT COMPONENT /END ====== */}
 
-                            {/*<p className={`my-4 text-base font-medium md:text-sm sm:!text-x min-w-full */}
-                            {/*    dark:text-white light:text-dark`}>*/}
-                            {/*    Bringing Ideas to Life.*/}
-                            {/*</p>*/}
-
                             <div className="flex items-center selft-start lg:self-center min-w-full
                                     mt-7 sm:justify-around">
                                 <Link href={"/dummy.pdf"} target={"_blank"}
                                       className="flex items-center bg-dark text-light
-                                        border-2 border-solid rounded-lg text-lg font-semibold p-2.5
-                                        px-6 border-transparent dark:bg-primaryDark dark:text-dark"
+                                        border-2 border-solid rounded-lg text-lg font-bold p-2.5
+                                        px-6 border-transparent dark:bg-red-500 dark:text-dark"
                                       download={true}>
                                     Resume
                                 </Link>
