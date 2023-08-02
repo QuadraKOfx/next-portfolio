@@ -21,11 +21,6 @@ const SocialIcons = () => {
             icon: <FiLinkedin/>,
             link: "https://www.linkedin.com/in/marios-constantinou11/",
         },
-        // {
-        //     name: "Instagram",
-        //     icon: <FiInstagram />,
-        //     link: "https://www.instagram.com/marios_con93/",
-        // },
         {
             name: "Twitter",
             icon: <FiTwitter />,
@@ -35,13 +30,13 @@ const SocialIcons = () => {
 
     return (
         <motion.div
-            className={"social-icons mb-8 z-50"}
+            className={"social-icons z-50"}
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{
                 duration: 0.3,
                 ease: 'easeInOut',
-                delay: 1.95
+                delay: 1
             }}>
             <ul className="social-icons-list">
                 {socialLinks.map(({name, icon, link}) => (

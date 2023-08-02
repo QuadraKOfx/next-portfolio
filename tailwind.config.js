@@ -27,7 +27,7 @@ module.exports = {
       }
     },
     screens: {
-      "2x1": {max: "1535px"},
+      "2xl": {max: "1535px"},
       // => @media (max-width: 1535px)
       x1: {max: "1279px"},
       // => @media (max-width: 1279px)
@@ -39,7 +39,9 @@ module.exports = {
       // => @media (max-width: 639px)
       xs: {max: "479px"},
       // => @media (max-width: 479px)
-      min_lg: {min: "1023px"},
+      min_lg: {min: "1279px"},
+      // => @media (min-width: 1023)
+      min_md: {min: "1023px"},
       // => @media (min-width: 1023)
     }
   },

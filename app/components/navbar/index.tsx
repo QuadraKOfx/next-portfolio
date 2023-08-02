@@ -10,6 +10,7 @@ import Link from "next/link";
 import useWindowSize from "portfolio/app/hooks/useWindowSize";
 import useThemeToggle from "portfolio/app/hooks/useThemeToggle";
 import {FiMoon, FiSun} from "react-icons/fi";
+import SocialIcons from "portfolio/app/components/social-icons";
 
 interface CustomLinkInterface {
     href: string;
@@ -95,13 +96,13 @@ const Navbar = () => {
 
             {/* MOBILE NAVBAR FOR SECTION LINKS */}
             {responsiveNavVisible &&
-                <div className="dark:bg-light min-w-[70vw] bg-dark/90 fixed top-1/2 py-32 rounded-lg flex items-center
-                    justify-between z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md">
-                    <nav className="w-full flex flex-col">
+                <div className="dark:bg-light min-w-[80vw] bg-dark/90 fixed top-1/2 py-32 rounded-lg flex items-center
+                    justify-between z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md max-h-full h-1/2">
+                    <nav className="w-full flex flex-col justify-between">
                         {sectionLinks.map(({name, link}, index) => (
                             <motion.button
                                 key={name}
-                                className="nav-items-list-item text-light dark:text-dark"
+                                className="nav-items-list-item text-light dark:text-dark h-9"
                                 initial={{opacity: 0, y: -25}}
                                 animate={{opacity: 1, y: 0}}
                                 transition={{
@@ -128,6 +129,8 @@ const Navbar = () => {
                             {mode === "dark" ? <FiSun className={"fill-dark"}/>
                                 : <FiMoon className={"fill-dark"}/>}
                         </motion.button>
+
+                        <SocialIcons />
                     </nav>
                 </div>
             }
@@ -136,7 +139,7 @@ const Navbar = () => {
             {navbarVisible &&
                 <nav>
                     {sectionLinks.map(({name, link}) => (
-                        <CustomLink key={name} title={name} className='mr-4 hover:underline p-1' href={link} />
+                        <CustomLink key={name} title={name} className='mr-4 hover:underline p-1 dark:text-light' href={link} />
                     ))}
                 </nav>
             }

@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="w-full border-t-2 border-solid border-dark font-medium text-lg
             dark:text-light dark:border-light bottom-0 sm:text-base">
-            <div className="py-8 flex items-center justify-between lg:flex-col lg:py-6">
+            <div className="py-8 flex items-center justify-between lg:flex-col lg:py-6 min_md:justify-around">
                 <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
                 <div className="flex items-center">
                     Build with <span className="text-primary dark:text-primaryDark text-2x1 px-1">&#9825;</span>
