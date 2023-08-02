@@ -35,7 +35,7 @@ const SocialIcons = () => {
 
     return (
         <motion.div
-            className={"social-icons mb-8"}
+            className={"social-icons mb-8 z-50"}
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{

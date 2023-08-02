@@ -9,6 +9,19 @@ import Link from "next/link";
 // HOOKS
 import useWindowSize from "portfolio/app/hooks/useWindowSize";
 
+interface CustomLinkInterface {
+    href: string;
+    title: string;
+    className: string;
+}
+const CustomLink = ({href, title, className}: CustomLinkInterface) => {
+    return(
+        <Link href={href} className={`${className}`}>
+            {title}
+        </Link>
+    )
+}
+
 const Navbar = () => {
     const [responsiveNavVisible, setResponsiveNavVisible] = useState(false);
     const [navbarVisible, setNavbarVisible] = useState(false);
@@ -35,7 +48,7 @@ const Navbar = () => {
     }, [width]);
 
     return (
-        <header className='flex w-full px-8 py-8 font-medium items-center justify-between fixed'>
+        <header className='flex w-full px-8 py-8 font-medium items-center justify-between fixed z-50'>
             {/* LEFT NAVBAR FOR SECTION LINKS */}
             <div className="w-full">
                 <nav>
@@ -49,7 +62,7 @@ const Navbar = () => {
                         }}>
                         {responsiveNavVisible ? (
                             <CgClose
-                                style={{cursor: 'pointer', fontSize: '28px'}}
+                                style={{cursor: 'pointer', fontSize: '28px', zIndex: 1000}}
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setResponsiveNavVisible(false);
@@ -57,7 +70,7 @@ const Navbar = () => {
                             />
                         ) : (
                             <GiHamburgerMenu
-                                style={{cursor: 'pointer', fontSize: '28px'}}
+                                style={{cursor: 'pointer', fontSize: '28px', zIndex: 1000}}
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setResponsiveNavVisible(true);
@@ -103,21 +116,8 @@ const Navbar = () => {
             {/* HIDE SECTION ICONS ON SMALLER SCREENS */}
             {navbarVisible &&
                 <nav>
-                    {sectionLinks.map(({name, link}, index) => (
-                        <motion.li
-                            key={name}
-                            className="nav-items-list-item"
-                            initial={{opacity: 0, y: -25}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{
-                                duration: 0.3,
-                                ease: "easeInOut",
-                                delay: 0.3 + index * 0.1,
-                            }}>
-                            <Link href={link} className="nav-items-list-item-link">
-                                {name}
-                            </Link>
-                        </motion.li>
+                    {sectionLinks.map(({name, link}) => (
+                        <CustomLink key={name} title={name} className='mr-4 hover:underline p-1' href={link} />
                     ))}
                 </nav>
             }
