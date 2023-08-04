@@ -17,8 +17,9 @@ interface CustomLinkInterface {
     title: string;
     className: string;
 }
+
 const CustomLink = ({href, title, className}: CustomLinkInterface) => {
-    return(
+    return (
         <Link href={href} className={`${className}`}>
             {title}
         </Link>
@@ -117,7 +118,8 @@ const Navbar = () => {
                         ))}
 
                         <motion.button
-                            className="nav-items-list-item text-light flex justify-center dark:text-dark"
+                            className="nav-items-list-item text-light flex justify-center
+                                dark:text-dark mt-3 text-2xl"
                             initial={{opacity: 0, y: -25}}
                             animate={{opacity: 1, y: 0}}
                             onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -130,7 +132,7 @@ const Navbar = () => {
                                 : <FiMoon className={"fill-dark"}/>}
                         </motion.button>
 
-                        <SocialIcons />
+                        <SocialIcons/>
                     </nav>
                 </div>
             }
@@ -139,7 +141,8 @@ const Navbar = () => {
             {navbarVisible &&
                 <nav>
                     {sectionLinks.map(({name, link}) => (
-                        <CustomLink key={name} title={name} className='mr-4 hover:underline p-1 dark:text-light' href={link} />
+                        <CustomLink key={name} title={name} className='mr-4 hover:underline p-1 dark:text-light'
+                                    href={link}/>
                     ))}
                 </nav>
             }

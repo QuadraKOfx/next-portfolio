@@ -16,7 +16,7 @@ export default function Home() {
             {/*<SocialIcons/>*/}
 
             {/*max-h-[85vh]*/}
-            <main className={`flex items-center text-dark w-full min-h-screen flex-col`}>
+            <main className={`flex items-center text-dark w-full flex-col`}>
                 {/* CONTAINER */}
                 <div className="z-0 flex w-full dark:bg-dark pt-7">
                     <div className="flex items-center w-full lg:flex-col sm:px-8 md:flex-col">
