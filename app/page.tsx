@@ -18,7 +18,7 @@ export default function Home() {
             {/*max-h-[85vh]*/}
             <main className={`flex items-center text-dark w-full min-h-screen flex-col`}>
                 {/* CONTAINER */}
-                <div className="z-0 flex w-full dark:bg-dark pt-7 min-h-[100vh]">
+                <div className="z-0 flex w-full dark:bg-dark pt-7">
                     <div className="flex items-center w-full lg:flex-col sm:px-8 md:flex-col">
                         {/* TODO ANIMATED TEXT IMAGE COMPONENT */}
                         <div className={`w-1/2 md:w-full flex justify-center min_lg:p-16`}>
